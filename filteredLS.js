@@ -26,12 +26,13 @@ var ext = '.' + process.argv[3]
 //gets two arguments(err, files), where files is an array of the
 //names of the files in the directory excluding '.' and '..'
 fs.readdir(folder, function (err, files){
-  if (err) return console.error(err)
-
+  if (err){
+    return console.error(err)
+  };
   //the  forEach() method executes a provided function once for each
   //array element. In this case each element is a file.
   files.forEach(function (file){
-
+    
     //path.extname() returns the extension of the path.
     //e.g. path.extname('index.html') returns: '.html'
     if (path.extname(file) === ext){
